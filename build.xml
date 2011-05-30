@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="SellerScout homepage" default="empty" basedir=".">
+
+        <description>SellerScout.co.uk</description>
+
+        <property file="config.properties"/>
+        
+        <target name="empty">
+            <echo>Please choose what to deploy: all, nginx, website</echo>
+        </target>
+
+        <target name="all" depends="nginx, website">
+        </target>
+
+        <target name="website" depends="sshconfig, build">
+            <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="rm -rf ${deploy.url}/*" failonerror="false"/>
+            <scp todir="${deploy.username}@${deploy.host}:${deploy.url}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}">
+                <fileset dir="_site" />
+            </scp>
+        </target>
+
+        <target name="nginx" depends="sshconfig">
+            <scp file="nginx" remoteTofile="${deploy.username}@${deploy.host}:${deploy.nginx}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" />
+            <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="sudo /etc/init.d/nginx reload"/>
+        </target>
+        
+        <target name="build" depends="jekyll">
+        </target>
+
+        <target name="jekyll">
+            <exec executable="jekyll" />
+        </target>
+        
+        <target name="sshconfig">
+            <input message="Please enter private key username:" addproperty="passphrase">
+                <handler classname="org.apache.tools.ant.input.SecureInputHandler" />
+            </input>
+        </target>
+</project>

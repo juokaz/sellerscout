@@ -1,0 +1,4 @@
+deploy.host = webspecies.co.uk
+deploy.username = deploy
+deploy.url = /var/www/sellerscout
+deploy.nginx = /etc/nginx/sites-available/sellerscout
