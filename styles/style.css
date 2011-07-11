@@ -36,6 +36,9 @@ nav, aside {display: block;}
 h1, h2, h3, .icon, label, .shedule, .person, .button, #main-menu a {font-family:'HelveticaNeueLTPro45Light'}
 h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-space: nowrap;}
 
+/*Side content*/ 
+.logo {display: inline-block; margin-bottom: 95px; padding-right: 50px; position: fixed; right: 0; top: 40px;}
+
 /*---Clearfix---*/
 .clearfix:before, .clearfix:after, .form-row:before, .form-row:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
 .clearfix:after, .form-row:after {clear: both;}
