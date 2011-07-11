@@ -1,0 +1,42 @@
+/*---Default elements---*/
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline;}
+a:hover, a:focus {outline: none;}
+a img {border: none;}
+img {vertical-align: middle;}
+.menu {list-style: none; padding: 0; margin: 0;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal; margin: 13px 0;}
+h2 strong, h3 strong {color: #000;}
+table {border-collapse: collapse; border-spacing: 0;}
+td, td img {vertical-align: top;}
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+form {margin: 0;}
+.form-row input.text, .form-row label {display: inline-block; float: left;} 
+input.submit, button, label {cursor: pointer;}
+label.for-checkbox, label.for-radio {width: auto; cursor: pointer}
+button, input, select, textarea {margin: 0;}
+input.radio, input.checkbox {vertical-align: text-bottom; margin: 0;}
+input.text, input.password, textarea {padding: 4px 6px; background: #171717; border: 1px solid #171717;}
+input.text, input.password, input.text, textarea, select, button, input.submit {font-family: Arial, Helvetica, sans-serif;}
+button {width: auto; overflow: visible;}
+
+/*---Helpers---*/
+.fl {float: left;}
+.fr {float: right;}
+.tar {text-align: right;}
+.tac {text-align: center;}
+.tal {text-align: left;}
+
+.cols-2 .col {width: 48%;} 
+ 
+/*---Site structure---*/
+html {font-family: Arial, Helvetica, sans-serif; color: #575757; font-size: 13px; background: url(../images/bg.png);}
+body {margin: 0;}
+nav, aside {display: block;} 
+ 
+h1, h2, h3, .icon, label, .shedule, .person, .button, #main-menu a {font-family:'HelveticaNeueLTPro45Light'}
+h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-space: nowrap;}
+
+/*---Clearfix---*/
+.clearfix:before, .clearfix:after, .form-row:before, .form-row:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
+.clearfix:after, .form-row:after {clear: both;}
+.clearfix, .form-row {zoom: 1;}
