@@ -36,8 +36,13 @@ nav, aside {display: block;}
 h1, h2, h3, .icon, label, .shedule, .person, .button, #main-menu a {font-family:'HelveticaNeueLTPro45Light'}
 h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-space: nowrap;}
 
-/*Side content*/ 
-.logo {display: inline-block; margin-bottom: 95px; padding-right: 50px; position: fixed; right: 0; top: 40px;}
+/*Header content*/ 
+.logo {display: inline-block; padding-right: 50px; position: fixed; right: 0; top: 40px;}
+
+/*Footer content*/ 
+.creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
+.creator img {margin-right: 10px;}
+.creator div {width: 100px; display: inline-block; vertical-align: middle;}
 
 /*---Clearfix---*/
 .clearfix:before, .clearfix:after, .form-row:before, .form-row:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
