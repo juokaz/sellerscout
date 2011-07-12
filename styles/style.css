@@ -38,14 +38,11 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 
 /*Header content*/ 
 .logo {display: inline-block; padding-right: 50px; position: fixed; right: 0; top: 40px;}
-#menu {background: url(../images/navigation_bg.png) no-repeat; width: 498px; height: 40px; position: fixed; left: 45px; top: 60px; padding: 10px 0 0 50px;}
-#menu a {color: #ffffff;}
-#menu li
-{
-display: inline;
-list-style-type: none;
-padding-right: 20px;
-}
+#menu {background: url(../images/navigation_bg.png) no-repeat; width: 498px; height: 40px; position: fixed; left: 45px; top: 60px; padding: 10px 0 0 40px;}
+#menu li {display: inline; list-style-type: none;}
+#menu li:after {content:" / "}
+#menu li:last-child:after {content: "";}
+#menu li a {color: #ffffff;padding-right: 20px;padding-left: 20px;}
 
 /*Footer content*/ 
 .creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
