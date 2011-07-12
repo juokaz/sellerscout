@@ -43,6 +43,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #menu li:after {content:" / "}
 #menu li:last-child:after {content: "";}
 #menu li a {color: #ffffff;padding-right: 20px;padding-left: 20px;}
+#menu li a.active {color: orange; text-decoration: none;}
 
 /*Footer content*/ 
 .creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
