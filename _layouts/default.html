@@ -38,7 +38,15 @@
 		</nav>
     </header>
     <div id="main" role="main">
-        {{ content }}
+        <div id="slides">
+            <div class="slide-parent">
+                <div class="slide">
+                    <div class="slide-inner">
+                        {{ content }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <div id="copyright">
@@ -72,6 +80,9 @@
     </footer>
   </div> <!--! end of #container -->
 
+  <script src="/vendors/jquery-1.5.2.min.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+  <script src="/scripts/scripts.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+	
   <script>
     var _gaq=[["_setAccount","UA-21529043-3"],["_trackPageview"]];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
