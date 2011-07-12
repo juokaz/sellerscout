@@ -85,7 +85,8 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 /*Footer content*/ 
 #creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px;}
 #creator img {margin-right: 10px;}
-#creator div {width: 100px; display: inline-block; vertical-align: middle; color: #626262;}
+#creator div {width: 100px; display: inline-block; vertical-align: middle; color: #626262; font-size: 14px;}
+#creator a {color: #626262; font-weight: bold; text-decoration: none;}
 
 #copyright {display: inline-block; padding-right: 50px; position: fixed; left: 0; bottom: 40px;}
 #copyright li {display: inline; list-style-type: none; font-size: 14px;}
