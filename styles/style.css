@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'NeoSansProLight';
+    src: url('neosanspro-light-webfont.eot');
+    src: url('neosanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('neosanspro-light-webfont.woff') format('woff'),
+         url('neosanspro-light-webfont.ttf') format('truetype'),
+         url('neosanspro-light-webfont.svg#NeoSansProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeoSansProBlack';
+    src: url('neosanspro-black-webfont.eot');
+    src: url('neosanspro-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('neosanspro-black-webfont.woff') format('woff'),
+         url('neosanspro-black-webfont.ttf') format('truetype'),
+         url('neosanspro-black-webfont.svg#NeoSansProBlack') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /*---Default elements---*/
 a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline;}
 a:hover, a:focus {outline: none;}
@@ -50,10 +72,11 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .slide-parent .anchor {position: absolute; top: 0px; right: 50%;}
 .slide {padding: 10px 0;}
 .slide-inner {width: 800px; margin: 0px auto;} 
+.slide h1 {font-family: "NeoSansProLight"; font-size: 30px; margin-bottom: 25px; color: #7e7e7e;}
 
 /*Features*/
-.feature {padding-left: 120px; width: 280px; height: 170px; float: left;}
-.feature h2 {margin-top: 0;}
+.feature {padding-left: 120px; width: 280px; height: 170px; float: left; color: #767676;}
+.feature h2 {margin-top: 0; color: #2e2e2e; font-family: "NeoSansProBlack"; font-size: 24px; text-transform: uppercase;}
 .automatic {background: url(../images/features_icon3.png) no-repeat;}
 .up-to-date {background: url(../images/features_icon2.png) no-repeat;}
 .flexible {background: url(../images/features_icon4.png) no-repeat;}
