@@ -46,9 +46,16 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #menu li a.active {color: orange; text-decoration: none;}
 
 /*Footer content*/ 
-.creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
-.creator img {margin-right: 10px;}
-.creator div {width: 100px; display: inline-block; vertical-align: middle;}
+#creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
+#creator img {margin-right: 10px;}
+#creator div {width: 100px; display: inline-block; vertical-align: middle;}
+
+#copyright {display: inline-block; padding-right: 50px; position: fixed; left: 0; bottom: 40px; }
+#copyright li {display: inline; list-style-type: none; font-size: 14px;}
+#copyright li:after {content:"\00B7"}
+#copyright li:last-child:after {content: "";}
+#copyright li span {padding-right: 8px;padding-left: 8px;}
+#copyright li a {color: #575757; font-weight: bold;}
 
 /*---Clearfix---*/
 .clearfix:before, .clearfix:after, .form-row:before, .form-row:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
