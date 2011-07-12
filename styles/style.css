@@ -61,11 +61,11 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 /*Header content*/ 
 .logo {display: inline-block; padding-right: 50px; position: fixed; right: 0; top: 40px;}
 #menu {background: url(../images/navigation_bg.png) no-repeat; width: 498px; height: 40px; position: fixed; left: 45px; top: 60px; padding: 10px 0 0 40px;}
-#menu li {display: inline; list-style-type: none;}
+#menu li {display: inline; list-style-type: none; color: #6e6e6e;}
 #menu li:after {content:" / "}
 #menu li:last-child:after {content: "";}
 #menu li a {color: #ffffff;padding-right: 20px;padding-left: 20px;}
-#menu li a.active {color: orange; text-decoration: none;}
+#menu li a.active {color: #ffb200; text-decoration: none;}
 
 /*Slides*/
 .slide-parent {padding:1px 0; position: relative; z-index: 0;} 
@@ -83,11 +83,11 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .full-api-access {background: url(../images/features_icon1.png) no-repeat;}
 
 /*Footer content*/ 
-#creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px; }
+#creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px;}
 #creator img {margin-right: 10px;}
-#creator div {width: 100px; display: inline-block; vertical-align: middle;}
+#creator div {width: 100px; display: inline-block; vertical-align: middle; color: #626262;}
 
-#copyright {display: inline-block; padding-right: 50px; position: fixed; left: 0; bottom: 40px; }
+#copyright {display: inline-block; padding-right: 50px; position: fixed; left: 0; bottom: 40px;}
 #copyright li {display: inline; list-style-type: none; font-size: 14px;}
 #copyright li:after {content:"\00B7"}
 #copyright li:last-child:after {content: "";}
