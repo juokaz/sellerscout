@@ -11,4 +11,8 @@ $(function(){
 	fixParameters();  
 	
     $(window).resize(fixParameters);
+    
+    var m = 'info';
+    m += '@';
+    $('#copyright a').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
 });
