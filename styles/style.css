@@ -80,9 +80,11 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .home h1 {font-family: "NeoSansProBlack"; font-size: 22px; color: #2e2e2e; margin-left: 100px; margin-bottom: 0px;}
 .home h2 {font-family: "NeoSansProLight"; margin-left: 200px;}
 .home span {display: inline-block;}
-.home .second {margin-left: 40px;}
-.home .third {margin-left: 80px;}
-.home .forth {margin-left: 120px;}
+.home span.second {margin-left: 40px;}
+.home span.third {margin-left: 80px;}
+.home span.forth {margin-left: 120px;}
+.home a.features {margin-left: 550px; margin-top: 30px; display: block; width: 313px; height: 40px; background: url(../images/see_the_features_button.png);}
+.home a.features:hover {background: url(../images/see_the_features_button_ON.png);}
 
 
 /*Features*/
