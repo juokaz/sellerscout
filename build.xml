@@ -19,6 +19,13 @@
             </scp>
         </target>
 
+        <target name="staging" depends="sshconfig, build">
+            <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="rm -rf ${deploy.staging}/*" failonerror="false"/>
+            <scp todir="${deploy.username}@${deploy.host}:${deploy.staging}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}">
+                <fileset dir="_site" />
+            </scp>
+        </target>
+
         <target name="nginx" depends="sshconfig">
             <scp file="nginx" remoteTofile="${deploy.username}@${deploy.host}:${deploy.nginx}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" />
             <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="sudo /etc/init.d/nginx reload"/>
