@@ -66,6 +66,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #menu li:last-child:after {content: "";}
 #menu li a {color: #ffffff;padding-right: 20px;padding-left: 20px;}
 #menu li a.active {color: #ffb200; text-decoration: none;}
+#menu li a:hover {text-decoration: none;}
 
 /*Slides*/
 .slide-parent {padding:0; z-index: -1; float: left;} 
@@ -107,6 +108,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #creator > a:hover {background: url(../images/webspecies_logo_ON.png);}
 #creator div {width: 100px; display: inline-block; vertical-align: middle; color: #626262; font-size: 14px;}
 #creator div a {color: #626262; font-weight: bold; text-decoration: none;}
+#creator div a:hover {text-decoration: underline;}
 
 #copyright {display: inline-block; padding-right: 50px; position: fixed; left: 0; bottom: 40px;}
 #copyright li {display: inline; list-style-type: none; font-size: 14px;}
@@ -114,6 +116,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #copyright li:last-child:after {content: "";}
 #copyright li span {padding-right: 8px;padding-left: 8px;}
 #copyright li a {color: #575757; font-weight: bold;}
+#copyright li a:hover {text-decoration: none;}
 
 /*---Clearfix---*/
 .clearfix:before, .clearfix:after, .form-row:before, .form-row:after {content: "\0020"; display: block; height: 0; visibility: hidden;} 
