@@ -20,6 +20,8 @@ function fixParameters (){
     
     // count of slides
     $('#slides').css('width', width*count+'px');
+    
+    gotoActiveSlide();
 };
 
 function gotoActiveSlide(duration) {   
@@ -96,7 +98,6 @@ $(function(){
     
     $('#slides').load('/slides.html', function() {
         fixParameters();
-        gotoActiveSlide();
         $(".default-text").blur();  
     });
 
