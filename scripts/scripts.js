@@ -147,5 +147,6 @@ $(function(){
         gotoActiveSlide(400);        
     }); // end onStateChange
 	
-    $(window).resize(fixParameters);    
+    $(window).resize(fixParameters);  
+    $(window).load(fixParameters);    
 });
