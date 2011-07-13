@@ -53,7 +53,7 @@ function addHistory(title, url, section) {
 	
     // Inform Google Analytics of the change
     if ( typeof window._gaq !== 'undefined' ) {
-        window._gaq.push(['_trackPageview', url]);
+        window._gaq.push(['_trackEvent', 'Menu', 'Click', title, url]);
     }
 }
 
