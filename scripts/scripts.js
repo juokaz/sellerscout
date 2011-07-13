@@ -106,15 +106,11 @@ $(function(){
         $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
     });
 
-    var scroll_to_active_content = function(href) {
-        addHistory($("#menu a[href='"+href+"']").attr('title'),href);
-    };
-
     $("#menu a, .menu-link").live('click', function(event){
         // Continue as normal for cmd clicks etc
         if ( event.which == 2 || event.metaKey ) { return true; }
 
-        scroll_to_active_content($(this).attr('href'));
+        addHistory($(this).attr('title'), $(this).attr('href'));
         
         event.preventDefault();
         return false;
@@ -151,6 +147,5 @@ $(function(){
         gotoActiveSlide(400);        
     }); // end onStateChange
 	
-    $(window).resize(fixParameters);
-    $(window).load(gotoActiveSlide);    
+    $(window).resize(fixParameters);    
 });
