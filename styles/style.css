@@ -51,7 +51,7 @@ button {width: auto; overflow: visible;}
 .cols-2 .col {width: 48%;} 
  
 /*---Site structure---*/
-html {font-family: Arial, Helvetica, sans-serif; color: #575757; font-size: 13px; background: url(../images/bg.png);}
+html {font-family: Arial, Helvetica, sans-serif; color: #575757; font-size: 13px; background: url(../images/bg.png); overflow: hidden;}
 body {margin: 0;}
 nav, aside {display: block;} 
  
