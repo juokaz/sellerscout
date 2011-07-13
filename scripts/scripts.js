@@ -45,14 +45,43 @@ function gotoActiveSlide(duration) {
         duration = 0;
     }
     
+    // set top elements to be in absolute location
+    var set_absolute = function () {
+        $('#menu, .logo').css('position', 'absolute');
+        $('#menu').css('top', '266px');
+        $('.logo').css('top', '246px');
+    };
+    
+    // set top elements to be in fixed position
+    var set_fixed = function () {
+        $('#menu, .logo').css('position', 'fixed');
+        $('#menu').css('top', '60px');
+        $('.logo').css('top', '40px');
+    };
+    
     // navigation order is different because contact is placed at the top of slides
     if (topUrl != 'contact') {
-        var axis = "yx";
+        // Slide is already in Y axis, onAfterFirst will not be executed
+        if ($('body').scrollTop() == top_offset) {
+            set_fixed();
+        }
+        
+        // scroll to correct slide
+        $('html').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "yx", onAfterFirst: function() {
+            set_fixed();
+        }});
     } else {
-        var axis = "xy";
+        // Slide is already in X axis, onAfterFirst will not be executed
+        if ($('body').scrollLeft() == left_offset) {
+            set_absolute();
+        }
+        
+        // scroll to correct slide
+        $('body').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "xy", onAfterFirst: function() {
+            set_absolute();
+        }});  
     }
-    
-    $('html, body').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: axis});    
+      
 }
 
 function addHistory(title, url, section) {
