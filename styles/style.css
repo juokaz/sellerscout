@@ -68,7 +68,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #menu li a.active {color: #ffb200; text-decoration: none;}
 
 /*Slides*/
-.slide-parent {padding:0; z-index: -1;} 
+.slide-parent {padding:0; z-index: -1; float: left;} 
 .slide-parent .anchor {position: absolute; top: 0px; right: 50%;}
 .slide {padding: 10px 0;}
 .slide-inner {width: 850px; margin: 0px auto;} 

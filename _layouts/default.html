@@ -18,21 +18,21 @@
 
   <div id="container">
     <header>
-    	<span class="logo"><a href="/"><img src="/images/logo.png" alt="SellerScout" width="248" height="113"/></a></span>
+    	<span class="logo"><a href="/" class="menu-link"><img src="/images/logo.png" alt="SellerScout" width="248" height="113"/></a></span>
     	
 		<nav>
 			<ul id="menu">
 				<li>
-					<a href="/"{% if page.section == 'home' %} class="active"{% endif %}>Home</a>
+					<a href="/" title="Competitor Price Monitoring for e-commerce stores"{% if page.section == 'home' %} class="active"{% endif %}>Home</a>
 				</li>
 				<li>
-					<a href="/features.html"{% if page.section == 'features' %} class="active"{% endif %}>Features</a>
+					<a href="/features.html" title="Features"{% if page.section == 'features' %} class="active"{% endif %}>Features</a>
 				</li>
 				<li>
-					<a href="/questions.html"{% if page.section == 'questions' %} class="active"{% endif %}>Questions</a>
+					<a href="/questions.html" title="Questions"{% if page.section == 'questions' %} class="active"{% endif %}>Questions</a>
 				</li>
 				<li>
-					<a href="/contact.html"{% if page.section == 'contact' %} class="active"{% endif %}>Contact us</a>
+					<a href="/contact.html" title="Contact us"{% if page.section == 'contact' %} class="active"{% endif %}>Contact us</a>
 				</li>
 		    </ul>
 		</nav>
@@ -75,6 +75,10 @@
   </div> <!--! end of #container -->
 
   <script src="/vendors/jquery-1.5.2.min.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+  <script src="/vendors/history.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+  <script src="/vendors/history.html4.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+  <script src="/vendors/history.adapter.jquery.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
+  <script src="/vendors/jquery.scrollTo-1.4.2-min.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
   <script src="/scripts/scripts.js?{{site.time | date: '%Y%m%d%H%M%S'}}"></script>
 	
   <script>
