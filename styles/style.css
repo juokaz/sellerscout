@@ -86,7 +86,6 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .home a.features {margin-left: 550px; margin-top: 30px; display: block; width: 313px; height: 40px; background: url(../images/see_the_features_button.png);}
 .home a.features:hover {background: url(../images/see_the_features_button_ON.png);}
 
-
 /*Features*/
 .feature {padding-left: 120px; padding-right: 20px; width: 280px; height: 170px; float: left; color: #767676;}
 .feature h2 {margin-top: 0; color: #2e2e2e; font-family: "NeoSansProBlack"; font-size: 24px; text-transform: uppercase;}
@@ -94,6 +93,13 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .up-to-date {background: url(../images/features_icon2.png) no-repeat;}
 .flexible {background: url(../images/features_icon4.png) no-repeat;}
 .full-api-access {background: url(../images/features_icon1.png) no-repeat;}
+
+/*Questions*/
+.question {width: 240px; float: left; padding-right: 40px;}
+.question h2 {text-indent: -9999px; height: 40px;}
+#questions .how-this-works h2 {background: url(../images/questions_2.png) no-repeat;}
+#questions .even-more h2 {background: url(../images/questions_3.png) no-repeat;}
+#questions .how-much-this-is-going-to-cost h2 {background: url(../images/questions_1.png) no-repeat;}
 
 /*Footer content*/ 
 #creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px;}
