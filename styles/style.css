@@ -102,7 +102,15 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .slide h1 {font-family: "NeoSansProLight"; font-size: 30px; margin-bottom: 25px; color: #7e7e7e;}
 
 /*Contact*/
-.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px; }
+.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px; color: #ffffff;}
+.contact .slide-inner {width: 100%}
+.contact a {color: #ffffff;}
+.contact a:hover {text-decoration: none;}
+.contact ul {margin-top: 30px; margin-left: 90px;}
+.contact li {list-style-type: none; padding-left: 50px; height: 24px; font-size: 16px; font-weight: bold; padding-bottom: 25px; line-height: 24px;}
+.contact .city {background: url(../images/contact_icon1.png) no-repeat;}
+.contact .email {background: url(../images/contact_icon2.png) no-repeat;}
+.contact .phone {background: url(../images/contact_icon3.png) no-repeat; font-size: 20px;}
 
 /*Home*/
 .home-parent {background: url(../images/orange_lines.gif) no-repeat;}

@@ -98,7 +98,12 @@ $(function(){
     
     $('#slides').load('/slides.html', function() {
         fixParameters();
-        $(".default-text").blur();  
+        
+        $(".default-text").blur();
+        
+        var m = 'info';
+        m += '@';
+        $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
     });
 
     var scroll_to_active_content = function(href) {
@@ -147,9 +152,5 @@ $(function(){
     }); // end onStateChange
 	
     $(window).resize(fixParameters);
-    $(window).load(gotoActiveSlide);
-    
-    var m = 'info';
-    m += '@';
-    $('#copyright a').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
+    $(window).load(gotoActiveSlide);    
 });
