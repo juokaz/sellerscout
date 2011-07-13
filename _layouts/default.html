@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]--> 
 <head> 
     <meta charset="utf-8"> 
-    <title>SellerScout - Competitor Price Monitoring for e-commerce stores</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}Competitor Price Monitoring for e-commerce stores{% endif %} - SellerScout</title>
     <meta name="description" content=""> 
     <meta name="keywords" content=""> 
     <meta name="author" content="Web Species Ltd"> 
@@ -23,16 +23,16 @@
 		<nav>
 			<ul id="menu">
 				<li>
-					<a href="/" class="active">Home</a>
+					<a href="/"{% if page.section == 'home' %} class="active"{% endif %}>Home</a>
 				</li>
 				<li>
-					<a href="/features">Features</a>
+					<a href="/features.html"{% if page.section == 'features' %} class="active"{% endif %}>Features</a>
 				</li>
 				<li>
-					<a href="/questions">Questions</a>
+					<a href="/questions.html"{% if page.section == 'questions' %} class="active"{% endif %}>Questions</a>
 				</li>
 				<li>
-					<a href="/contact">Contact us</a>
+					<a href="/contact.html"{% if page.section == 'contact' %} class="active"{% endif %}>Contact us</a>
 				</li>
 		    </ul>
 		</nav>
