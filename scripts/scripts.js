@@ -8,9 +8,11 @@ function fixParameters (){
     
     $(".slide").each(function(){
 	    if($(this).outerHeight() < $(window).height()){
-		    var itemMargin = ($(window).height() - $(this).outerHeight()) /2;
-		    $(this).css('margin-top', itemMargin+'px');
-		    $(this).css('margin-bottom', itemMargin+'px');
+	        if (!$(this).hasClass('contact')) {
+		        var itemMargin = ($(window).height() - $(this).outerHeight()) /2;
+		        $(this).css('margin-top', Math.ceil(itemMargin)+'px');
+		        $(this).css('margin-bottom', Math.floor(itemMargin)+'px');
+		    }
 		    $(this).css('width', width+'px');
 	    }
 	    count++;
@@ -21,8 +23,9 @@ function fixParameters (){
 };
 
 function gotoActiveSlide(duration) {   
-    var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0];
- 
+    var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0],
+        duration = parseInt(duration);
+
     if ($("#menu a.active").size() > 0) {
         if (topUrl == '') {
             topUrl = 'home';
@@ -30,16 +33,24 @@ function gotoActiveSlide(duration) {
         // @todo temporary fix, because links contain html
         topUrl = topUrl.replace('.html', '');
 
-        var offset = $("a[name="+topUrl+"]").parent().offset().left;
+        var left_offset = $("a[name="+topUrl+"]").parent().offset().left,
+            top_offset = $("a[name="+topUrl+"]").parent().offset().top;
     } else {
-        var offset = 0;
+        var left_offset = top_offset = 0;
     }
     
-    if (typeof duration === 'undefined') {
-        duration = 400;
+    if (isNaN(duration)) {
+        duration = 0;
     }
     
-    $('html, body').scrollTo({top: 0, left: offset}, 0, {easing:'swing', duration: duration});
+    // navigation order is different because contact is placed at the top of slides
+    if (topUrl != 'contact') {
+        var axis = "yx";
+    } else {
+        var axis = "xy";
+    }
+    
+    $('html, body').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: axis});    
 }
 
 function addHistory(title, url, section) {
@@ -85,7 +96,7 @@ $(function(){
     
     $('#slides').load('/slides.html', function() {
         fixParameters();
-        gotoActiveSlide(0);
+        gotoActiveSlide();
         $(".default-text").blur();  
     });
 
@@ -131,7 +142,7 @@ $(function(){
         $("#menu a").removeClass('active');
         $("#menu a[href='/"+topUrl+"']").addClass('active');
         
-        gotoActiveSlide();        
+        gotoActiveSlide(400);        
     }); // end onStateChange
 	
     $(window).resize(fixParameters);

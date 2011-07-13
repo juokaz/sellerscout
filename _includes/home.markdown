@@ -1,7 +1,4 @@
-<div class="slide-parent">
-    <div class="background">
-        <img src="/images/orange_lines.gif" alt="Background image" />
-    </div>
+<div class="slide-parent home-parent">
 	<a name="home" class="anchor"><br/></a>
     <div class="slide home">
         <div class="slide-inner">
