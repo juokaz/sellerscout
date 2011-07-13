@@ -2,6 +2,10 @@ function fixParameters (){
     var count = 0,
         width = $(window).width();
     
+    if (width < 1190) {
+        width = 1190;
+    }
+    
     $(".slide").each(function(){
 	    if($(this).outerHeight() < $(window).height()){
 		    var itemMargin = ($(window).height() - $(this).outerHeight()) /2;
@@ -82,6 +86,7 @@ $(function(){
     $('#slides').load('/slides.html', function() {
         fixParameters();
         gotoActiveSlide(0);
+        $(".default-text").blur();  
     });
 
     var scroll_to_active_content = function(href) {
@@ -97,6 +102,26 @@ $(function(){
         event.preventDefault();
         return false;
     });
+    
+    $(".default-text").live('focus', function(srcc)
+    {
+        if ($(this).val() == $(this)[0].title)
+        {
+            $(this).removeClass("default-text-active");
+            $(this).val("");
+        }
+    });
+    
+    $(".default-text").live('blur', function()
+    {
+        if ($(this).val() == "")
+        {
+            $(this).addClass("default-text-active");
+            $(this).val($(this)[0].title);
+        }
+    });
+    
+    $(".default-text").blur();  
 
     // Hook into State Changes
     History.Adapter.bind(window,'statechange',function(){ 
