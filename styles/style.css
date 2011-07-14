@@ -102,7 +102,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .slide h1 {font-family: "NeoSansProLight"; font-size: 30px; margin-bottom: 25px; color: #7e7e7e;}
 
 /*Contact*/
-.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px; color: #ffffff;}
+.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px; color: #ffffff; text-shadow: #000000 1px 1px 4px;}
 .contact .slide-inner {width: 100%}
 .contact a {color: #ffffff;}
 .contact a:hover {text-decoration: none;}
@@ -124,7 +124,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .home span.forth {margin-left: 120px;}
 .home a.features {margin-left: 550px; margin-top: 30px; display: block; width: 313px; height: 40px; background: url(../images/see_the_features_button.png);}
 .home a.features:hover {background: url(../images/see_the_features_button_ON.png);}
-#subscribe {color: #ffffff; font-family: "NeoSansProRegular"; font-size: 16px; text-align: center; position: absolute; left: 150px;}
+#subscribe {color: #ffffff; font-family: "NeoSansProRegular"; font-size: 16px; text-align: center; position: absolute; left: 150px; text-shadow: #000000 1px 1px 4px;}
 #subscribe strong {font-family: "NeoSansProBold";}
 #subscribe form {background: url(../images/subscribtion_field.png) no-repeat; width: 294px; height: 34px; margin-top: 10px; padding: 4px;}
 #subscribe form input {height: 26px; border: 0;}
