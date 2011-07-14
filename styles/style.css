@@ -102,15 +102,26 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .slide h1 {font-family: "NeoSansProLight"; font-size: 30px; margin-bottom: 25px; color: #7e7e7e;}
 
 /*Contact*/
-.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px; color: #ffffff; text-shadow: #000000 1px 1px 4px;}
+.contact {background: url(../images/orange_contact_line.gif) no-repeat #323232; height: 185px;}
 .contact .slide-inner {width: 100%}
 .contact a {color: #ffffff;}
 .contact a:hover {text-decoration: none;}
-.contact ul {margin-top: 30px; margin-left: 90px;}
+.contact ul {margin-top: 30px; margin-left: 90px; float: left; color: #ffffff; text-shadow: #000000 1px 1px 4px;}
 .contact li {list-style-type: none; padding-left: 50px; height: 24px; font-size: 16px; font-weight: bold; padding-bottom: 25px; line-height: 24px;}
 .contact .city {background: url(../images/contact_icon1.png) no-repeat;}
 .contact .email {background: url(../images/contact_icon2.png) no-repeat;}
 .contact .phone {background: url(../images/contact_icon3.png) no-repeat; font-size: 20px;}
+#contacts-form {float: right; margin-right: 80px;}
+#contacts-form .form-row {position: relative; padding-bottom: 13px;} 
+#contacts-form .form-item {width: 200px; float: left;} 
+#contacts-form .form-item-first {padding-right: 20px;} 
+#contacts-form label {color: #fff; font-size: 13px; font-family: Arial, Helvetica, sans-serif; font-style: italic; padding-bottom: 8px;}
+#contacts-form label span {color: #fede00;} 
+#contacts-form input.submit {background: url(../images/send_button.gif) no-repeat left top; width: 79px; height: 79px; position: absolute; bottom: 17px; right: 0px; border: none; text-indent: -9999px;}
+#contacts-form input.text, textarea {color: #fff; font-size: 13px;} 
+#contacts-form input.text:focus, input.text:active, textarea:focus, textarea:active, input.focus, textarea.focus {background: #fff; color: #333;}
+#contacts-form input.text {width: 186px;}
+#contacts-form textarea {width: 406px; height: 70px;} 
 
 /*Home*/
 .home-parent {background: url(../images/orange_lines.gif) no-repeat;}

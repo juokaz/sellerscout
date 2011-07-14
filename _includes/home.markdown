@@ -17,7 +17,7 @@
             <div id="subscribe">
                 Give us your email address and<br /><strong>we'll hit you up when it's ready</strong>. Thanks.
                 
-                <form action="">
+                <form action="#">
                     <input type="text" name="email" class="default-text email" title="enter your email address" />
                     <input type="submit" value="Subscribe" class="submit">
                 </form>
