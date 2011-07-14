@@ -47,16 +47,20 @@ function gotoActiveSlide(duration) {
     
     // set top elements to be in absolute location
     var set_absolute = function () {
-        $('#menu, .logo').css('position', 'absolute');
-        $('#menu').css('top', '266px');
-        $('.logo').css('top', '246px');
+        $('#menu, .logo, #copyright, #creator').css('position', 'absolute');
+        $('#menu').css('top', '265px');
+        $('.logo').css('top', '245px');
+        $('#copyright').css('bottom', '-165px');
+        $('#creator').css('bottom', '-175px');
     };
     
     // set top elements to be in fixed position
     var set_fixed = function () {
-        $('#menu, .logo').css('position', 'fixed');
+        $('#menu, .logo, #copyright, #creator').css('position', 'fixed');
         $('#menu').css('top', '60px');
         $('.logo').css('top', '40px');
+        $('#copyright').css('bottom', '40px');
+        $('#creator').css('bottom', '30px');
     };
     
     // navigation order is different because contact is placed at the top of slides
