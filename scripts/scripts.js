@@ -167,7 +167,17 @@ $(function(){
         }
     });
     
-    $(".default-text").blur();  
+    $(".default-text").blur();
+    
+    $("#contacts-form textarea").live('focus', function(srcc)
+    {
+        $("#contacts-form input.submit").addClass("submit-focus");
+    });
+    
+    $("#contacts-form textarea").live('blur', function()
+    {
+        $("#contacts-form input.submit").removeClass("submit-focus");
+    });  
 
     // Hook into State Changes
     History.Adapter.bind(window,'statechange',function(){ 
