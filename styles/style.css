@@ -115,9 +115,9 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #contacts-form .form-row {position: relative; padding-bottom: 13px; width: 420px;} 
 #contacts-form .form-item {width: 200px; float: left;} 
 #contacts-form .form-item-first {padding-right: 20px;} 
-#contacts-form label {color: #fff; font-size: 13px; font-family: Arial, Helvetica, sans-serif; font-style: italic; padding-bottom: 8px;}
+#contacts-form label {color: #fff; font-size: 13px; font-family: Arial, Helvetica, sans-serif; font-style: italic; padding-bottom: 8px; line-height: 15px;}
 #contacts-form label span {color: #fede00;} 
-#contacts-form input.submit {background: url(../images/send_button.gif) no-repeat left top; width: 79px; height: 79px; position: absolute; bottom: 17px; right: 0px; border: none; text-indent: -9999px;} 
+#contacts-form input.submit {background: url(../images/send_button.gif) no-repeat left top; width: 79px; height: 79px; padding: 0; position: absolute; top: 24px; right: 0px; border: none; text-indent: -9999px;} 
 #contacts-form input.submit-focus {background: url(../images/send_button_ON.gif);}
 #contacts-form input.text, textarea {color: #fff; font-size: 13px;} 
 #contacts-form input.text:focus, input.text:active, textarea:focus, textarea:active, input.focus, textarea.focus {background: #fff; color: #333;}
