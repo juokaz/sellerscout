@@ -106,7 +106,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .contact .slide-inner {width: 100%}
 .contact a {color: #ffffff;}
 .contact a:hover {text-decoration: none;}
-.contact ul {margin-top: 30px; margin-left: 90px; float: left; color: #ffffff; text-shadow: #000000 1px 1px 4px;}
+.contact ul {margin-top: 30px; margin-left: 90px; float: left; color: #ffffff; text-shadow: #ad6800 1px 1px 1px;}
 .contact li {list-style-type: none; padding-left: 50px; height: 24px; font-size: 16px; font-weight: bold; padding-bottom: 25px; line-height: 24px;}
 .contact .city {background: url(../images/contact_icon1.png) no-repeat;}
 .contact .email {background: url(../images/contact_icon2.png) no-repeat;}
@@ -136,7 +136,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .home span.forth {margin-left: 120px;}
 .home a.features {margin-left: 550px; margin-top: 30px; display: block; width: 313px; height: 40px; background: url(../images/see_the_features_button.png);}
 .home a.features:hover {background: url(../images/see_the_features_button_ON.png);}
-#subscribe {color: #ffffff; font-family: "NeoSansProRegular"; font-size: 16px; text-align: center; position: absolute; left: 150px; text-shadow: #000000 1px 1px 4px;}
+#subscribe {color: #ffffff; font-family: "NeoSansProRegular"; font-size: 16px; text-align: center; position: absolute; left: 150px; text-shadow: #ad6800 1px 1px 1px;}
 #subscribe strong {font-family: "NeoSansProBold";}
 #subscribe form {background: url(../images/subscribtion_field.png) no-repeat; width: 294px; height: 34px; margin-top: 10px; padding: 4px;}
 #subscribe form input {height: 26px; border: 0;}
