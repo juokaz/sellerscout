@@ -142,7 +142,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #subscribe form input {height: 26px; border: 0;}
 #subscribe form .email {float: left; width: 200px; float: left; margin-left: 10px;}
 #subscribe form .default-text-active {color: #3b3b3b; font-style: italic;}
-#subscribe form .submit {background: url(../images/subscribe_button.png) no-repeat; width: 77px; font-weight: bold; color: #ffffff; float: right;}
+#subscribe form .submit {background: url(../images/subscribe_button.png) no-repeat; width: 77px; font-size: 13px; font-weight: bold; color: #ffffff; float: right;}
 
 /*Features*/
 .feature {padding-left: 120px; padding-right: 20px; width: 280px; height: 170px; float: left; color: #767676;}
