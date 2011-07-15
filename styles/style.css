@@ -112,7 +112,7 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 .contact .email {background: url(../images/contact_icon2.png) no-repeat;}
 .contact .phone {background: url(../images/contact_icon3.png) no-repeat; font-size: 20px;}
 #contacts-form {float: right; margin-right: 80px;}
-#contacts-form .form-row {position: relative; padding-bottom: 13px;} 
+#contacts-form .form-row {position: relative; padding-bottom: 13px; width: 420px;} 
 #contacts-form .form-item {width: 200px; float: left;} 
 #contacts-form .form-item-first {padding-right: 20px;} 
 #contacts-form label {color: #fff; font-size: 13px; font-family: Arial, Helvetica, sans-serif; font-style: italic; padding-bottom: 8px;}
