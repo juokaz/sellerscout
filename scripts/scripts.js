@@ -66,22 +66,22 @@ function gotoActiveSlide(duration) {
     // navigation order is different because contact is placed at the top of slides
     if (topUrl != 'contact') {
         // Slide is already in Y axis, onAfterFirst will not be executed
-        if ($('body').scrollTop() == top_offset) {
+        if ($(window).scrollTop() == top_offset) {
             set_fixed();
         }
         
         // scroll to correct slide
-        $('html').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "yx", onAfterFirst: function() {
+        $(window).scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "yx", onAfterFirst: function() {
             set_fixed();
         }});
     } else {
         // Slide is already in X axis, onAfterFirst will not be executed
-        if ($('body').scrollLeft() == left_offset) {
+        if ($(window).scrollLeft() == left_offset) {
             set_absolute();
         }
         
         // scroll to correct slide
-        $('body').scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "xy", onAfterFirst: function() {
+        $(window).scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "xy", onAfterFirst: function() {
             set_absolute();
         }});  
     }
