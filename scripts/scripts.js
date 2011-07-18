@@ -167,6 +167,19 @@ $(function(){
         }
     });
     
+    $('#contacts-form').live('submit', function() {
+        var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "dB5YAYUJLThQ1vViLqkRtO8PC6nWmLuPsz2BRQNT4gw=" };
+        $.post("/contact-process", data)
+            .complete(function(XMLHttpRequest) {
+                if (XMLHttpRequest.status == 302) { 
+                    $('#name').val('');
+                    $('#mail').val('');
+                    $('#message').val('');
+                } 
+            });
+        return false;
+    });
+    
     // Hook into State Changes
     History.Adapter.bind(window,'statechange',function(){ 
         var relativeUrl = History.getState().url.replace(rootUrl,''),
