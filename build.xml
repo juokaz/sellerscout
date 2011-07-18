@@ -4,6 +4,7 @@
         <description>SellerScout.co.uk</description>
 
         <property file="config.properties"/>
+        <property name="YUI" value="lib/yuicompressor.jar" description="YUICompressor" />
         
         <target name="empty">
             <echo>Please choose what to deploy: all, nginx, website</echo>
@@ -12,33 +13,65 @@
         <target name="all" depends="nginx, website">
         </target>
 
-        <target name="website" depends="sshconfig, build">
+        <target name="website" depends="-sshconfig, build">
             <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="rm -rf ${deploy.url}/*" failonerror="false"/>
             <scp todir="${deploy.username}@${deploy.host}:${deploy.url}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}">
                 <fileset dir="_site" />
             </scp>
         </target>
 
-        <target name="staging" depends="sshconfig, build">
+        <target name="staging" depends="-sshconfig, build">
             <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="rm -rf ${deploy.staging}/*" failonerror="false"/>
             <scp todir="${deploy.username}@${deploy.host}:${deploy.staging}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}">
                 <fileset dir="_site" />
             </scp>
         </target>
 
-        <target name="nginx" depends="sshconfig">
+        <target name="nginx" depends="-sshconfig">
             <scp file="nginx" remoteTofile="${deploy.username}@${deploy.host}:${deploy.nginx}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" />
             <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="sudo /etc/init.d/nginx reload"/>
         </target>
         
-        <target name="build" depends="jekyll">
+        <target name="build" depends="-jekyll, -csspack, -jspack">
         </target>
 
-        <target name="jekyll">
+        <target name="-jekyll">
             <exec executable="jekyll" />
         </target>
         
-        <target name="sshconfig">
+        <target name="-csspack">
+            <apply executable="java" parallel="false" verbose="true" dest="_site/styles">
+                <fileset dir="_site/styles">
+                    <include name="style.css" />
+                </fileset>
+                <arg line="-jar" />
+                <arg path="${YUI}" />
+                <arg value="--charset" />
+                <arg value="ANSI" />
+                <arg value="-o" />
+                <targetfile />
+                <mapper type="glob" from="style.css" to="style.min.css" />
+            </apply>
+            <replace dir="_site/" token="styles/style.css" value="styles/style.min.css"/>
+        </target>
+        
+        <target name="-jspack">
+            <apply executable="java" parallel="false" verbose="true" dest="_site/scripts">
+                <fileset dir="_site/scripts">
+                    <include name="scripts.js" />
+                </fileset>
+                <arg line="-jar" />
+                <arg path="${YUI}" />
+                <arg value="--charset" />
+                <arg value="ANSI" />
+                <arg value="-o" />
+                <targetfile />
+                <mapper type="glob" from="scripts.js" to="scripts.min.js" />
+            </apply>
+            <replace dir="_site/" token="scripts/scripts.js" value="scripts/scripts.min.js"/>
+        </target>
+        
+        <target name="-sshconfig">
             <input message="Please enter private key username:" addproperty="passphrase">
                 <handler classname="org.apache.tools.ant.input.SecureInputHandler" />
             </input>
