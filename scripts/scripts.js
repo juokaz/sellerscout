@@ -168,13 +168,25 @@ $(function(){
     });
     
     $('#contacts-form').live('submit', function() {
-        var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "dB5YAYUJLThQ1vViLqkRtO8PC6nWmLuPsz2BRQNT4gw=" };
+        var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "Qkz4yM2MFKzYjJnP2M6DhtoN8oBbT2IpVUhMPn8FQR4=" };
         $.post("/contact-process", data)
             .complete(function(XMLHttpRequest) {
                 if (XMLHttpRequest.status == 302) { 
                     $('#name').val('');
                     $('#mail').val('');
                     $('#message').val('');
+                } 
+            });
+        return false;
+    });
+    
+    $('#subscribe-form').live('submit', function() {
+        var data = { Field1: $('#subscribe-form .email').val(), idstamp: "WagGI+2XoI874W+5vnoXI+8prYAN65UMlNDL/eDzFJg=" };
+        $.post("/subscribe-process", data)
+            .complete(function(XMLHttpRequest) {
+                if (XMLHttpRequest.status == 302) { 
+                    $('#subscribe-form .email').val('');
+                    $(".default-text").blur();
                 } 
             });
         return false;
