@@ -5,7 +5,7 @@
             <ul>
                 <li class="city">Edinburgh, UK</li>
                 <li class="email"><a href="" class="sellerscout-email"></a></li>
-                <li class="phone">+44 (0) 781 849 682</li>
+                <li class="phone">+44 (0) 7818 496 282</li>
             </ul>
             
             <form id="contacts-form" action="#"> 
