@@ -32,8 +32,6 @@ function gotoActiveSlide(duration) {
         if (topUrl == '') {
             topUrl = 'home';
         }
-        // @todo temporary fix, because links contain html
-        topUrl = topUrl.replace('.html', '');
 
         var left_offset = $("a[name="+topUrl+"]").parent().offset().left,
             top_offset = $("a[name="+topUrl+"]").parent().offset().top;
@@ -129,7 +127,7 @@ $(function(){
         $("#menu a[href='/"+topUrl+"']").addClass('active');
     }
     
-    $('#slides').load('/slides.html', function() {
+    $('#slides').load('/slides', function() {
         fixParameters();
         
         $(".default-text").blur();

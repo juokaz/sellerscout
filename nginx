@@ -28,6 +28,30 @@ server {
 	
     error_page 404 /404.html;
     
+    # Disallow direct html pages requests
+    location ~* ^.+\.html$ {
+       internal;
+    }
+
+    # Set image format types to expire in a very long time
+    location ~* ^.+\.(jpg|jpeg|gif|png|ico)$ {
+        access_log off;
+        expires max;
+    }
+    
+    # Set css and js to expire in a very long time
+    location ~* ^.+\.(css|js)$ {
+        access_log off;
+        expires max;
+    }
+
+    # Set font files expirity
+    location ~* ^.+\.(eot|ttf|woff)$ {
+        access_log off;
+        expires max;
+        add_header Access-Control-Allow-Origin *;
+    }
+    
     location /contact-process {
         proxy_pass                       http://webspecies.wufoo.com/forms/contact-sellerscout/;
         proxy_set_header Host            webspecies.wufoo.com;
@@ -49,6 +73,11 @@ server {
     # Catchall for everything else
     location / {
 		index  index.html index.htm;
+		
+        # Redirect to html pages 
+        if (!-e $request_filename) {
+            rewrite ^/(.*)$ /$1.html last;
+        }
 
         add_header 'X-UA-Compatible' 'IE=edge,chrome=1';
 	}

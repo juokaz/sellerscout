@@ -12,7 +12,7 @@
                 <span class="third">the market level. What we mean by market level is not too cheap</span>
                 <span class="forth">and not too expensive, compared to other stores.</span>
             </h2>
-            <a href="/features.html" class="features menu-link" title="See the features"></a>
+            <a href="/features" class="features menu-link" title="See the features"></a>
             
             <div id="subscribe">
                 Give us your email address and<br /><strong>we'll hit you up when it's ready</strong>. Thanks.
