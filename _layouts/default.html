@@ -23,6 +23,9 @@
 		<nav>
 			<ul id="menu">
 				<li>
+					<a href="/contact" title="Contact us"{% if page.section == 'contact' %} class="active"{% endif %}>Contact us</a>
+				</li>
+				<li>
 					<a href="/" title="Competitor Price Monitoring for e-commerce stores"{% if page.section == 'home' %} class="active"{% endif %}>Home</a>
 				</li>
 				<li>
@@ -30,9 +33,6 @@
 				</li>
 				<li>
 					<a href="/questions" title="Questions"{% if page.section == 'questions' %} class="active"{% endif %}>Questions</a>
-				</li>
-				<li>
-					<a href="/contact" title="Contact us"{% if page.section == 'contact' %} class="active"{% endif %}>Contact us</a>
 				</li>
 		    </ul>
 		</nav>
