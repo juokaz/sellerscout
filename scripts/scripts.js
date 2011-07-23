@@ -45,18 +45,18 @@ function gotoActiveSlide(duration) {
     
     // set top elements to be in absolute location
     var set_absolute = function () {
-        $('#menu, .logo, #copyright, #creator').css('position', 'absolute');
-        $('#menu').css('top', '265px');
-        $('.logo').css('top', '245px');
+        $('#menu, #logo, #copyright, #creator').css('position', 'absolute');
+        $('#menu').css('top', '245px');
+        $('#logo').css('top', '225px');
         $('#copyright').css('bottom', '-165px');
         $('#creator').css('bottom', '-175px');
     };
     
     // set top elements to be in fixed position
     var set_fixed = function () {
-        $('#menu, .logo, #copyright, #creator').css('position', 'fixed');
-        $('#menu').css('top', '60px');
-        $('.logo').css('top', '40px');
+        $('#menu, #logo, #copyright, #creator').css('position', 'fixed');
+        $('#menu').css('top', '40px');
+        $('#logo').css('top', '20px');
         $('#copyright').css('bottom', '40px');
         $('#creator').css('bottom', '30px');
     };
@@ -110,21 +110,34 @@ $(function(){
     var	History = window.History,
 	    rootUrl = History.getRootUrl(),
         url = History.getPageUrl();
-        
-	fixParameters();  
+
+    fixParameters(); 
+
+    if (History.enabled) { 
 	
-	// check if homepage
-    if (rootUrl.replace(url, '') != rootUrl) {
-        var relativeUrl = 'home';
-    } else {
-        var relativeUrl = url.replace(/\/$/, '').replace(rootUrl,'');
-    }
-    
-    var topUrl = relativeUrl.split('/')[0];    
-      
-    if (relativeUrl !== "" && $("#menu a[href='/"+topUrl+"']").length){
-        $("#menu a").removeClass('active');
-        $("#menu a[href='/"+topUrl+"']").addClass('active');
+	    // check if homepage
+        if (rootUrl.replace(url, '') != rootUrl) {
+            var relativeUrl = 'home';
+        } else {
+            var relativeUrl = url.replace(/\/$/, '').replace(rootUrl,'');
+        }
+        
+        var topUrl = relativeUrl.split('/')[0];    
+          
+        if (relativeUrl !== "" && $("#menu a[href='/"+topUrl+"']").length){
+            $("#menu a").removeClass('active');
+            $("#menu a[href='/"+topUrl+"']").addClass('active');
+        }
+        
+        $("#menu a, .menu-link").live('click', function(event){
+            // Continue as normal for cmd clicks etc
+            if ( event.which == 2 || event.metaKey ) { return true; }
+
+            addHistory($(this).attr('title'), $(this).attr('href'));
+            
+            event.preventDefault();
+            return false;
+        });
     }
     
     $('#slides').load('/slides', function() {
@@ -135,16 +148,6 @@ $(function(){
         var m = 'info';
         m += '@';
         $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
-    });
-
-    $("#menu a, .menu-link").live('click', function(event){
-        // Continue as normal for cmd clicks etc
-        if ( event.which == 2 || event.metaKey ) { return true; }
-
-        addHistory($(this).attr('title'), $(this).attr('href'));
-        
-        event.preventDefault();
-        return false;
     });
     
     $(".default-text").live('focus', function(srcc)
