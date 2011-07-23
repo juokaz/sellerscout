@@ -25,6 +25,11 @@ function fixParameters (){
 };
 
 function gotoActiveSlide(duration) {   
+    // This is a static page
+    if ($(".static").length != 0) {
+        return false;
+    }
+    
     var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0],
         duration = parseInt(duration);
 
@@ -107,48 +112,51 @@ function addHistory(title, url, section) {
 
 $(function(){
 
-    var	History = window.History,
+    var	dynamic = $(".static").length == 0,
+        History = window.History,
 	    rootUrl = History.getRootUrl(),
         url = History.getPageUrl();
 
     fixParameters(); 
 
-    if (History.enabled) { 
+	if (dynamic) {
+        if (History.enabled) { 
 	
-	    // check if homepage
-        if (rootUrl.replace(url, '') != rootUrl) {
-            var relativeUrl = 'home';
-        } else {
-            var relativeUrl = url.replace(/\/$/, '').replace(rootUrl,'');
-        }
-        
-        var topUrl = relativeUrl.split('/')[0];    
-          
-        if (relativeUrl !== "" && $("#menu a[href='/"+topUrl+"']").length){
-            $("#menu a").removeClass('active');
-            $("#menu a[href='/"+topUrl+"']").addClass('active');
-        }
-        
-        $("#menu a, .menu-link").live('click', function(event){
-            // Continue as normal for cmd clicks etc
-            if ( event.which == 2 || event.metaKey ) { return true; }
-
-            addHistory($(this).attr('title'), $(this).attr('href'));
+	        // check if homepage
+            if (rootUrl.replace(url, '') != rootUrl) {
+                var relativeUrl = 'home';
+            } else {
+                var relativeUrl = url.replace(/\/$/, '').replace(rootUrl,'');
+            }
             
-            event.preventDefault();
-            return false;
+            var topUrl = relativeUrl.split('/')[0];    
+              
+            if (relativeUrl !== "" && $("#menu a[href='/"+topUrl+"']").length){
+                $("#menu a").removeClass('active');
+                $("#menu a[href='/"+topUrl+"']").addClass('active');
+            }
+            
+            $("#menu a, .menu-link").live('click', function(event){
+                // Continue as normal for cmd clicks etc
+                if ( event.which == 2 || event.metaKey ) { return true; }
+
+                addHistory($(this).attr('title'), $(this).attr('href'));
+                
+                event.preventDefault();
+                return false;
+            });
+        }
+        
+        $('#slides').load('/slides', function() {
+            fixParameters();
+            
+            $(".default-text").blur();
+            
+            var m = 'info';
+            m += '@';
+            $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
         });
     }
-    
-    $('#slides').load('/slides', function() {
-        fixParameters();
-        
-        $(".default-text").blur();
-        
-        var m = 'info';
-        m += '@';
-        $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
-    });
     
     $(".default-text").live('focus', function(srcc)
     {

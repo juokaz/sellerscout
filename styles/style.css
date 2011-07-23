@@ -79,8 +79,8 @@ html {font-family: Arial, Helvetica, sans-serif; color: #575757; font-size: 13px
 body {margin: 0;}
 nav, aside {display: block;} 
  
-h1, h2, h3, .icon, label, .shedule, .person, .button, #main-menu a {font-family:'HelveticaNeueLTPro45Light'}
-h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-space: nowrap;}
+h1, h2, h3, .icon, label, .shedule, .person, .button, #main-menu a {font-family:'NeoSansProLight'}
+h1 strong, h2 strong, h3 strong {font-family:'NeoSansProBlack'; white-space: nowrap;}
 
 .anchor {font-size: 0px; height: 0px; line-height: 0px;} 
 
@@ -159,6 +159,15 @@ h1 strong, h2 strong, h3 strong {font-family:'HelveticaNeueLTPro75Bold'; white-s
 #questions .how-this-works h2 {background: url(../images/questions_2.png) no-repeat;}
 #questions .even-more h2 {background: url(../images/questions_3.png) no-repeat;}
 #questions .how-much-this-is-going-to-cost h2 {background: url(../images/questions_1.png) no-repeat;}
+
+/*Error 404*/
+.error404, .error404 a {color: black;}
+.error404 a {text-decoration: none; font-weight: bold;}
+.error404 .lefter {display: table;}
+.error404 .lefter > h2 {font-size: 200px; font-weight: bold; letter-spacing: 5px; display: table-cell;}
+.error404 .lefter > strong {font-size: 65px; font-weight: bold; vertical-align: middle; height: 200px; display: table-cell; padding-left: 30px;}
+.error404 .righter {text-align: center;}
+.error404 .righter p {font-size: 14px;}
 
 /*Footer content*/ 
 #creator {display: inline-block; padding-right: 30px; position: fixed; right: 0; bottom: 30px;}
