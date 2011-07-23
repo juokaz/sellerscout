@@ -27,7 +27,7 @@
                     <p>
                         Prices are not final yet, but expect the price to be based on how many competitors you want to track and how much products you sell. We are going to work with you personally to find the right price. It’s a service, so it’s going to have a fixed price payable each month, and you can stop using it any time you want to.
                     </p>
-                    <p>We want this to be beneficial for you, so the price you will be paying is supposed to be just a portion of your increased sales or long-term market position value. The goal of this service is to help to make your store more competitive and we think this is wort a lot. 
+                    <p>We want this to be beneficial for you, so the price you will be paying is supposed to be just a portion of your increased sales or long-term market position value. The goal of this service is to help to make your store more competitive and we think this is worth a lot. 
                     </p>
                 </div>
 

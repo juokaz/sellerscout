@@ -12,7 +12,7 @@
 
                 <div class="up-to-date feature">
                     <h2>Up-to-date</h2>
-                    Products' data is updated at least once a day, so you can be sure that you are not acting upon outdated information. If you ask so, we can make it almost-realtime, so you know immediately when prices do change.
+                    Products' data is updated at least once a day, so you can be sure that you are not acting upon out-dated information. If you ask so, we can make it almost-realtime, so you know immediately when prices do change.
                 </div>
 
                 <div class="flexible feature">
@@ -22,7 +22,7 @@
 
                 <div class="full-api-access feature">
                     <h2>Full API access</h2>
-                    If you have in-house developers they can integrate <em>SellerScout</em> to your internal systems or we can help you with that. Just mention the word API to them, and they will know what to do next. Absolutely all functionality and data is accessible programatically. 
+                    If you have in-house developers they can integrate <em>SellerScout</em> to your internal systems or we can help you with that. Just mention the word API to them, and they will know what to do next. Absolutely all functionality and data is accessible programmatically. 
                 </div>
                 
                 <div class="clearfix"></div>
