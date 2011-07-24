@@ -4,7 +4,7 @@
         <div class="slide-inner">
             <h1>
                 <span>If you have been selling online long enough you will</span>
-                <span class="second">know that having the best price is a key to success.</span>
+                <span class="second">know that having the best price is the key to success.</span>
             </h1>
             <h2>
                 <span>Of course you don’t necessary want to be the cheapest one, although this</span>
