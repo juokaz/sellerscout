@@ -177,7 +177,7 @@ $(function(){
     });
     
     $('#contacts-form').live('submit', function() {
-        var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "Qkz4yM2MFKzYjJnP2M6DhtoN8oBbT2IpVUhMPn8FQR4=" };
+        var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "O3YIB49IpdLWUVsv5SjSIyvr6Y3qYGB7SWtx8zc5zss=" };
         $.post("/contact-process", data)
             .complete(function(XMLHttpRequest) {
                 if (XMLHttpRequest.status == 302) { 
@@ -190,7 +190,7 @@ $(function(){
     });
     
     $('#subscribe-form').live('submit', function() {
-        var data = { Field1: $('#subscribe-form .email').val(), idstamp: "WagGI+2XoI874W+5vnoXI+8prYAN65UMlNDL/eDzFJg=" };
+        var data = { Field1: $('#subscribe-form .email').val(), idstamp: "mZFO5GJ8JE8jXtIKLMARtQ2GqdctvrUBTM/M7jwV4w4=" };
         $.post("/subscribe-process", data)
             .complete(function(XMLHttpRequest) {
                 if (XMLHttpRequest.status == 302) { 
