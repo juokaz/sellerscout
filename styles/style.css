@@ -95,8 +95,8 @@ h1 strong, h2 strong, h3 strong {font-family:'NeoSansProBlack'; white-space: now
 #menu li a:hover {text-decoration: none;}
 
 /*Slides*/
-.slide-parent {padding:0; z-index: -1; float: left;} 
-.slide-parent .anchor {position: absolute; top: 0px; right: 50%;}
+.slide-parent {padding:0; z-index: -1; float: left; height: 100%;} 
+.slide-parent .anchor {position: absolute; top: 0px; right: 0px; height: 0px; width: 0px; line-height: 0px;}
 .slide {padding: 10px 0;}
 .slide-inner {width: 850px; margin: 0px auto;} 
 .slide h1 {font-family: "NeoSansProLight"; font-size: 30px; margin-bottom: 25px; color: #7e7e7e;}
@@ -124,13 +124,13 @@ h1 strong, h2 strong, h3 strong {font-family:'NeoSansProBlack'; white-space: now
 #contacts-form textarea {width: 406px; height: 71px;} 
 
 /*Home*/
-.home .slide-inner {width: 900px;}
+.home .slide-inner {width: 900px; white-space:nowrap;}
 .home-parent {background: url(../images/orange_lines.gif) no-repeat;}
 .background {width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: -2; overflow: hidden;}
 .background img {width:1804px; height: 1200px;}
 .home h1 {font-family: "NeoSansProBlack"; font-size: 22px; color: #2e2e2e; margin-left: 100px; margin-bottom: 0px;}
 .home h2 {font-family: "NeoSansProLight"; margin-left: 200px;}
-.home span {display: inline-block;}
+.home span {display: block;}
 .home span.second {margin-left: 40px;}
 .home span.third {margin-left: 80px;}
 .home span.fourth {margin-left: 120px;}

@@ -32,7 +32,7 @@
             <sshexec host="${deploy.host}" username="${deploy.username}" keyfile="${user.home}/.ssh/id_rsa" passphrase="${passphrase}" command="sudo /etc/init.d/nginx reload"/>
         </target>
         
-        <target name="build" depends="-jekyll, -csspack, -jspack">
+        <target name="build" depends="-jekyll, -csspack">
         </target>
 
         <target name="-jekyll">
