@@ -1,11 +1,7 @@
 function fixParameters (){
     var count = 0,
         width = $(window).width();
-    
-    if (width < 1190) {
-        width = 1190;
-    }
-    
+        
     $(".slide").each(function(){
 	    if($(this).outerHeight() < $(window).height()){
 	        if (!$(this).hasClass('contact')) {
