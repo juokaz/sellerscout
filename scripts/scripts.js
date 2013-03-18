@@ -1,7 +1,7 @@
 function fixParameters (){
     var count = 0,
         width = $(window).width();
-        
+
     $(".slide").each(function(){
 	    if($(this).outerHeight() < $(window).height()){
 	        if (!$(this).hasClass('contact')) {
@@ -13,20 +13,20 @@ function fixParameters (){
 	    }
 	    count++;
     });
-    
+
     // count of slides
     $('#slides').css('width', width*count+'px');
-    
+
     gotoActiveSlide();
 };
 
-function gotoActiveSlide(duration) {   
+function gotoActiveSlide(duration) {
     // This is a static page
     if ($(".static").length != 0) {
         return false;
     }
-    
-    var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0],
+
+    var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0].replace('.html', '');
         duration = parseInt(duration);
 
     if ($("#menu a.active").size() > 0) {
@@ -39,11 +39,11 @@ function gotoActiveSlide(duration) {
     } else {
         var left_offset = top_offset = 0;
     }
-    
+
     if (isNaN(duration)) {
         duration = 0;
     }
-    
+
     // set top elements to be in absolute location
     var set_absolute = function () {
         $('#menu, #logo, #copyright, #creator').css('position', 'absolute');
@@ -52,7 +52,7 @@ function gotoActiveSlide(duration) {
         $('#copyright').css('bottom', '-165px');
         $('#creator').css('bottom', '-175px');
     };
-    
+
     // set top elements to be in fixed position
     var set_fixed = function () {
         $('#menu, #logo, #copyright, #creator').css('position', 'fixed');
@@ -61,14 +61,14 @@ function gotoActiveSlide(duration) {
         $('#copyright').css('bottom', '40px');
         $('#creator').css('bottom', '30px');
     };
-    
+
     // navigation order is different because contact is placed at the top of slides
     if (topUrl != 'contact') {
         // Slide is already in Y axis, onAfterFirst will not be executed
         if ($(window).scrollTop() == top_offset) {
             set_fixed();
         }
-        
+
         // scroll to correct slide
         $(window).scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "yx", onAfterFirst: function() {
             set_fixed();
@@ -78,13 +78,13 @@ function gotoActiveSlide(duration) {
         if ($(window).scrollLeft() == left_offset) {
             set_absolute();
         }
-        
+
         // scroll to correct slide
         $(window).scrollTo({top: top_offset, left: left_offset}, 0, {easing:'swing', duration: duration, queue: true, axis: "xy", onAfterFirst: function() {
             set_absolute();
-        }});  
+        }});
     }
-      
+
 }
 
 function addHistory(title, url, section) {
@@ -97,9 +97,9 @@ function addHistory(title, url, section) {
     } else {
         title = "SellerScout";
     }
-    
+
     History.pushState(null,title,url);
-	
+
     // Inform Google Analytics of the change
     if ( typeof window._gaq !== 'undefined' ) {
         window._gaq.push(['_trackEvent', 'Menu', 'Click', title]);
@@ -113,47 +113,47 @@ $(function(){
 	    rootUrl = History.getRootUrl(),
         url = History.getPageUrl();
 
-    fixParameters(); 
+    fixParameters();
 
 	if (dynamic) {
-        if (History.enabled) { 
-	
+        if (History.enabled) {
+
 	        // check if homepage
             if (rootUrl.replace(url, '') != rootUrl) {
                 var relativeUrl = 'home';
             } else {
                 var relativeUrl = url.replace(/\/$/, '').replace(rootUrl,'');
             }
-            
-            var topUrl = relativeUrl.split('/')[0];    
-              
-            if (relativeUrl !== "" && $("#menu a[href='/"+topUrl+"']").length){
+
+            var topUrl = relativeUrl.split('/')[0];
+
+            if (relativeUrl !== "" && $("#main-menu a[href='/"+topUrl.replace('.html', '')+"']").length){
                 $("#menu a").removeClass('active');
                 $("#menu a[href='/"+topUrl+"']").addClass('active');
             }
-            
+
             $("#menu a, .menu-link").live('click', function(event){
                 // Continue as normal for cmd clicks etc
                 if ( event.which == 2 || event.metaKey ) { return true; }
 
                 addHistory($(this).attr('title'), $(this).attr('href'));
-                
+
                 event.preventDefault();
                 return false;
             });
         }
-        
-        $('#slides').load('/slides', function() {
+
+        $('#slides').load('/slides.html', function() {
             fixParameters();
-            
+
             $(".default-text").blur();
-            
+
             var m = 'info';
             m += '@';
             $('a.sellerscout-email').append(m + 'sellerscout.co.uk').attr('href', 'mailto:' + m + 'sellerscout.co.uk');
         });
     }
-    
+
     $(".default-text").live('focus', function(srcc)
     {
         if ($(this).val() == $(this)[0].title)
@@ -162,7 +162,7 @@ $(function(){
             $(this).val("");
         }
     });
-    
+
     $(".default-text").live('blur', function()
     {
         if ($(this).val() == "")
@@ -171,43 +171,43 @@ $(function(){
             $(this).val($(this)[0].title);
         }
     });
-    
+
     $('#contacts-form').live('submit', function() {
         var data = { Field4: $('#name').val(), Field12: $('#mail').val(), Field7: $('#message').val(), idstamp: "O3YIB49IpdLWUVsv5SjSIyvr6Y3qYGB7SWtx8zc5zss=" };
         $.post("/contact-process", data)
             .complete(function(XMLHttpRequest) {
-                if (XMLHttpRequest.status == 302) { 
+                if (XMLHttpRequest.status == 302) {
                     $('#name').val('');
                     $('#mail').val('');
                     $('#message').val('');
-                } 
+                }
             });
         return false;
     });
-    
+
     $('#subscribe-form').live('submit', function() {
         var data = { Field1: $('#subscribe-form .email').val(), idstamp: "mZFO5GJ8JE8jXtIKLMARtQ2GqdctvrUBTM/M7jwV4w4=" };
         $.post("/subscribe-process", data)
             .complete(function(XMLHttpRequest) {
-                if (XMLHttpRequest.status == 302) { 
+                if (XMLHttpRequest.status == 302) {
                     $('#subscribe-form .email').val('');
                     $(".default-text").blur();
-                } 
+                }
             });
         return false;
     });
-    
+
     // Hook into State Changes
-    History.Adapter.bind(window,'statechange',function(){ 
+    History.Adapter.bind(window,'statechange',function(){
         var relativeUrl = History.getState().url.replace(rootUrl,''),
-            topUrl = relativeUrl.split('/')[0];
+            topUrl = relativeUrl.split('/')[0].replace('.html', '');
 
         $("#menu a").removeClass('active');
-        $("#menu a[href='/"+topUrl+"']").addClass('active');
-        
-        gotoActiveSlide(400);        
+        $("#menu a[href='/"+topUrl+"'.html]").addClass('active');
+
+        gotoActiveSlide(400);
     }); // end onStateChange
-	
-    $(window).resize(fixParameters);  
-    $(window).load(fixParameters);    
+
+    $(window).resize(fixParameters);
+    $(window).load(fixParameters);
 });
