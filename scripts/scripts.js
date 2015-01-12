@@ -20,13 +20,18 @@ function fixParameters (){
     gotoActiveSlide();
 };
 
+function getRootUrl()
+{
+    return History.getRootUrl() + "sellerscout/"
+}
+
 function gotoActiveSlide(duration) {
     // This is a static page
     if ($(".static").length != 0) {
         return false;
     }
 
-    var topUrl = History.getState().url.replace(History.getRootUrl(),'').split('/')[0].replace('.html', '');
+    var topUrl = History.getState().url.replace(getRootUrl(),'').split('/')[0].replace('.html', '');
         duration = parseInt(duration);
 
     if ($("#menu a.active").size() > 0) {
@@ -110,7 +115,7 @@ $(function(){
 
     var	dynamic = $(".static").length == 0,
         History = window.History,
-	    rootUrl = History.getRootUrl(),
+	    rootUrl = getRootUrl(),
         url = History.getPageUrl();
 
     fixParameters();
@@ -127,9 +132,9 @@ $(function(){
 
             var topUrl = relativeUrl.split('/')[0];
 
-            if (relativeUrl !== "" && $("#main-menu a[href='/"+topUrl.replace('.html', '')+"']").length){
+            if (relativeUrl !== "" && $("#main-menu a[href='"+topUrl.replace('.html', '')+"']").length){
                 $("#menu a").removeClass('active');
-                $("#menu a[href='/"+topUrl+"']").addClass('active');
+                $("#menu a[href='"+topUrl+"']").addClass('active');
             }
 
             $("#menu a, .menu-link").live('click', function(event){
@@ -143,7 +148,7 @@ $(function(){
             });
         }
 
-        $('#slides').load('/slides.html', function() {
+        $('#slides').load('slides.html', function() {
             fixParameters();
 
             $(".default-text").blur();
@@ -203,7 +208,7 @@ $(function(){
             topUrl = relativeUrl.split('/')[0].replace('.html', '');
 
         $("#menu a").removeClass('active');
-        $("#menu a[href='/"+topUrl+"'.html]").addClass('active');
+        $("#menu a[href='"+topUrl+"'.html]").addClass('active');
 
         gotoActiveSlide(400);
     }); // end onStateChange
